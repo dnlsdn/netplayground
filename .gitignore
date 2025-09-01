@@ -11,3 +11,7 @@ pcaps/
 
 # Logs
 *.log
+
+# Captures
+captures/
+*.pcap
