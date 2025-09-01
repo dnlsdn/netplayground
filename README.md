@@ -1,4 +1,4 @@
-# NetPlayground — Mini-Internet in Docker (work in progress)
+# NetPlayground — Mini-Internet in Docker
 
 > A hands-on lab to learn **DNS, NAT, routing, and TCP** in a reproducible way.
 
