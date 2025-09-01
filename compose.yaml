@@ -1,0 +1,14 @@
+# Defines LAN and WAN networks with fixed subnets.
+services: {}
+
+networks:
+  lan:
+    name: netplay_lan
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
+  wan:
+    name: netplay_wan
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
