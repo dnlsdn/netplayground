@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# IDE / Editors
+.idea/
+.vscode/
+
+# Outputs and captures
+pcaps/
+*.pcap
+
+# Logs
+*.log
