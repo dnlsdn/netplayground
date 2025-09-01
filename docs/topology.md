@@ -21,7 +21,7 @@ graph LR
 
   C -->|DNS queries| D
   C -->|HTTP via NAT| R1
-  R1 == NAT/forward == R2
+  R1 -->|NAT forward| R2
   R2 --> W1
   R2 --> W2
 ```
