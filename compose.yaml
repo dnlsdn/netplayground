@@ -1,23 +1,27 @@
 # Two static web servers on the WAN network.
 services:
   web1:
-    image: nginx:alpine
+    build: ./web1
     container_name: netplay_web1
-    volumes:
-      - ./web1/index.html:/usr/share/nginx/html/index.html:ro
     networks:
       wan:
         ipv4_address: 172.20.0.100
     restart: unless-stopped
 
   web2:
-    image: nginx:alpine
+    build: ./web2
     container_name: netplay_web2
-    volumes:
-      - ./web2/index.html:/usr/share/nginx/html/index.html:ro
     networks:
       wan:
         ipv4_address: 172.20.0.101
+    restart: unless-stopped
+
+  dns:
+    build: ./dns
+    container_name: netplay_dns
+    networks:
+      lan:
+        ipv4_address: 10.0.0.2
     restart: unless-stopped
 
 networks:
