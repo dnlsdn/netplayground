@@ -38,6 +38,18 @@ services:
         ipv4_address: 172.20.0.254
     restart: unless-stopped
 
+  client:
+    build: ./client
+    container_name: netplay_client
+    dns:
+      - 10.0.0.2
+    cap_add:
+      - NET_ADMIN
+    networks:
+      lan:
+        ipv4_address: 10.0.0.100
+    restart: unless-stopped
+
 networks:
   lan:
     name: netplay_lan
