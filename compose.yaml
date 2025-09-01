@@ -1,5 +1,24 @@
-# Defines LAN and WAN networks with fixed subnets.
-services: {}
+# Two static web servers on the WAN network.
+services:
+  web1:
+    image: nginx:alpine
+    container_name: netplay_web1
+    volumes:
+      - ./web1/index.html:/usr/share/nginx/html/index.html:ro
+    networks:
+      wan:
+        ipv4_address: 172.20.0.100
+    restart: unless-stopped
+
+  web2:
+    image: nginx:alpine
+    container_name: netplay_web2
+    volumes:
+      - ./web2/index.html:/usr/share/nginx/html/index.html:ro
+    networks:
+      wan:
+        ipv4_address: 172.20.0.101
+    restart: unless-stopped
 
 networks:
   lan:
